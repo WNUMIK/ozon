@@ -11,7 +11,8 @@ services:
       - 8000:8000
     networks:
       - backend_core_db_network
-
+    volumes:
+      - ./backend_core:/app
   backend_core_db:
     image: postgres:14-alpine
     volumes:
@@ -22,7 +23,6 @@ services:
       - 5432:5432
     networks:
       - backend_core_db_network
-
 
 volumes:
   backend_core_db_volume:
